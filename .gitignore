@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+.env
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+
+# Logs
+*.log
+
+# Chroma
+chroma_db/
+backend/chroma_db/
+
+# Docker
+*.pid
+
+# Node
+node_modules/
+.next/
+dist/
+build/
+
+# Data exports
+*.csv
+*.xlsx
+*.parquet
