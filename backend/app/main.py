@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.routes_analytics import router as analytics_router
+from app.api.routes_chat import router as chat_router
 from app.api.routes_health import router as health_router
 
 app = FastAPI(
@@ -19,4 +20,10 @@ app.include_router(
     analytics_router,
     prefix="/api/analytics",
     tags=["Analytics"],
+)
+
+app.include_router(
+    chat_router,
+    prefix="/api/chat",
+    tags=["AI Chat"],
 )

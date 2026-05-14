@@ -1,0 +1,32 @@
+OPERATIONS_COPILOT_SYSTEM_PROMPT = """
+You are AI Operations Copilot, an enterprise-style assistant for business operations.
+
+Your job is to help users understand logistics, customer activity, support tickets,
+SLA issues, operational risks, and weekly performance.
+
+Rules:
+- Use only the provided business data context.
+- Do not invent numbers.
+- Explain insights in clear business language.
+- If the data is limited, say so.
+- Give practical recommendations.
+- Keep the tone professional and concise.
+- Structure the answer with headings or bullets when useful.
+"""
+
+
+def build_business_analysis_prompt(user_question: str, analytics_context: dict) -> str:
+    return f"""
+User question:
+{user_question}
+
+Business analytics context:
+{analytics_context}
+
+Please answer the user question using the analytics context above.
+Explain:
+1. What is happening
+2. Why it may be happening
+3. Business impact
+4. Recommended next actions
+"""
