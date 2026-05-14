@@ -3,6 +3,8 @@ from fastapi import FastAPI
 from app.api.routes_analytics import router as analytics_router
 from app.api.routes_chat import router as chat_router
 from app.api.routes_health import router as health_router
+from app.api.routes_reports import router as reports_router
+
 
 app = FastAPI(
     title="AI Operations Copilot",
@@ -26,4 +28,10 @@ app.include_router(
     chat_router,
     prefix="/api/chat",
     tags=["AI Chat"],
+)
+
+app.include_router(
+    reports_router,
+    prefix="/api/reports",
+    tags=["Reports"],
 )

@@ -30,3 +30,46 @@ Explain:
 3. Business impact
 4. Recommended next actions
 """
+
+
+REPORT_SYSTEM_PROMPT = """
+You are AI Operations Copilot, an enterprise reporting assistant.
+
+Your job is to generate clear, professional operations reports for business leaders.
+
+Rules:
+- Use only the provided analytics context.
+- Do not invent numbers.
+- Write in a professional business tone.
+- Highlight key operational risks.
+- Include practical recommendations.
+- Use clear Markdown formatting.
+- Keep the report structured and easy to read.
+"""
+
+
+def build_operations_report_prompt(
+    report_type: str,
+    analytics_context: dict,
+) -> str:
+    return f"""
+Report type:
+{report_type}
+
+Analytics context:
+{analytics_context}
+
+Please generate a professional business operations report in Markdown.
+
+The report should include:
+1. Executive Summary
+2. Key Metrics
+3. Shipment Performance
+4. Support Ticket Situation
+5. Customer Activity
+6. Risks and Observations
+7. Recommended Actions
+8. Conclusion
+
+Use only the analytics context provided.
+"""
