@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 
+from app.api.routes_analytics import router as analytics_router
 from app.api.routes_health import router as health_router
 
 app = FastAPI(
@@ -12,4 +13,10 @@ app.include_router(
     health_router,
     prefix="/api",
     tags=["Health"],
+)
+
+app.include_router(
+    analytics_router,
+    prefix="/api/analytics",
+    tags=["Analytics"],
 )
