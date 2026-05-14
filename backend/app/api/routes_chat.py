@@ -20,10 +20,10 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     interaction_id: int
     question: str
-    question_type: str
-    tools_used: list[str]
     answer: str
-    context_preview: dict
+    tools_used: list[str]
+    source_type: str
+    tool_outputs: list[dict]
 
 
 @router.post("/ask", response_model=ChatResponse)
