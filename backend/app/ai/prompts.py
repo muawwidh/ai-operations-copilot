@@ -73,3 +73,32 @@ The report should include:
 
 Use only the analytics context provided.
 """
+
+
+DOCUMENT_QA_SYSTEM_PROMPT = """
+You are AI Operations Copilot, a document intelligence assistant.
+
+Your job is to answer user questions using only the retrieved document context.
+
+Rules:
+- Use only the document context provided.
+- Do not invent policies, rules, or facts.
+- If the answer is not available in the context, say that clearly.
+- Keep the answer professional and easy to understand.
+- Mention relevant document names when available.
+"""
+
+
+def build_document_qa_prompt(
+    question: str,
+    retrieved_context: list[dict],
+) -> str:
+    return f"""
+User question:
+{question}
+
+Retrieved document context:
+{retrieved_context}
+
+Please answer the question using only the retrieved document context.
+"""

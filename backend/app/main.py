@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 from app.api.routes_analytics import router as analytics_router
 from app.api.routes_chat import router as chat_router
+from app.api.routes_documents import router as documents_router
 from app.api.routes_health import router as health_router
 from app.api.routes_reports import router as reports_router
 
@@ -34,4 +35,10 @@ app.include_router(
     reports_router,
     prefix="/api/reports",
     tags=["Reports"],
+)
+
+app.include_router(
+    documents_router,
+    prefix="/api/documents",
+    tags=["Documents"],
 )

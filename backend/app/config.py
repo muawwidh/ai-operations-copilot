@@ -11,8 +11,12 @@ class Settings(BaseSettings):
 
     OPENAI_API_KEY: str = ""
     OPENAI_MODEL: str = "gpt-4o-mini"
+    OPENAI_EMBEDDING_MODEL: str = "text-embedding-3-small"
 
     CHROMA_PERSIST_DIR: str = "./chroma_db"
+    CHROMA_COLLECTION_NAME: str = "operations_documents"
+
+    UPLOAD_DIR: str = "./uploads"
 
     LOG_LEVEL: str = "info"
 
