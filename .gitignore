@@ -3,6 +3,8 @@ __pycache__/
 *.pyc
 .venv/
 .env
+backend/.env
+frontend/streamlit_app/.env
 
 # OS
 .DS_Store
